@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+/* Caixa que envolve todo o conteúdo */
+.box {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparência para caixa */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px; /* Largura fixa da caixa */
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Estilo para o tema escuro */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .dark-logo {
+    display: block;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-style: normal;
+}
+
+/* Estilo para o tema claro */
+.light-theme {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+.light-theme .light-logo {
+    display: block;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* O botão agora ocupa toda a largura da caixa */
+    justify-content: center;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo dos botões no tema escuro */
+.dark-theme .btn {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.dark-theme .btn:hover {
+    background-color: #bbbbbb;
+}
+
+/* Estilo dos botões no tema claro */
+.light-theme .btn {
+    background-color: #000000;
+    color: #f5f5f5;
+}
+
+.light-theme .btn:hover {
+    background-color: #444444;
+}
+
+/* Botão para trocar tema */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
