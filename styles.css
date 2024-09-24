@@ -6,7 +6,6 @@ body {
     align-items: center;
     height: 100vh;
     transition: background-color 0.3s, color 0.3s;
-    position: relative;
 }
 
 /* Caixa que envolve todo o conteúdo */
@@ -26,45 +25,7 @@ body {
 .logo {
     max-width: 300px;
     margin-bottom: 20px;
-    display: none;
-}
-
-/* Estilo para o tema escuro */
-.dark-theme {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.dark-theme .dark-logo {
-    display: block;
-}
-
-h1 {
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-optical-sizing: auto;
-    font-size: 20px;
-    font-style: normal;
-}
-
-/* Estilo para o tema claro */
-.light-theme {
-    background-color: #f5f5f5;
-    color: #000000;
-}
-
-.light-theme .light-logo {
-    display: block;
-}
-
-h1 {
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-optical-sizing: auto;
-    font-size: 20px;
-    font-style: normal;
+    display:block;
 }
 
 .buttons {
@@ -91,39 +52,52 @@ h1 {
     height: 20px;
 }
 
-/* Estilo dos botões no tema escuro */
-.dark-theme .btn {
-    background-color: #ffffff;
-    color: #121212;
+/* Tema escuro (aplicado automaticamente se o sistema usar tema escuro) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    .dark-logo {
+        display: block;
+    }
+
+    .light-logo {
+        display: none;
+    }
+
+    .btn {
+        background-color: #ffffff;
+        color: #121212;
+    }
+
+    .btn:hover {
+        background-color: #bbbbbb;
+    }
 }
 
-.dark-theme .btn:hover {
-    background-color: #bbbbbb;
-}
+/* Tema claro (aplicado automaticamente se o sistema usar tema claro) */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f5f5f5;
+        color: #000000;
+    }
 
-/* Estilo dos botões no tema claro */
-.light-theme .btn {
-    background-color: #000000;
-    color: #f5f5f5;
-}
+    .light-logo {
+        display: block;
+    }
 
-.light-theme .btn:hover {
-    background-color: #444444;
-}
+    .dark-logo {
+        display: none;
+    }
 
-/* Botão para trocar tema */
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    color: inherit;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
+    .btn {
+        background-color: #000000;
+        color: #f5f5f5;
+    }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
+    .btn:hover {
+        background-color: #444444;
+    }
 }
