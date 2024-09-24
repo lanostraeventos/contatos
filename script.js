@@ -1,10 +1,20 @@
-function toggleTheme() {
-    const body = document.body;
-    if (body.classList.contains('dark-theme')) {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
+// Aplicar o tema baseado na preferência do sistema ou no localStorage
+function applyPreferredTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (storedTheme) {
+        if (storedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
+    } else if (prefersDarkScheme) {
+        document.body.classList.add('dark-theme');
     } else {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
+        document.body.classList.add('light-theme');
     }
 }
+
+// Aplicar tema automaticamente ao carregar a página
+window.onload = applyPreferredTheme;
